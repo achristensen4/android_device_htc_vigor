@@ -6,9 +6,9 @@ ro.sf.lcd_density = 320
 
 # RIL properties
 # cm props
-mobiledata.interfaces = rmnet0,rmnet_sdio0
+mobiledata.interfaces = rmnet0,rmnet1,rmnet2
 ro.telephony.ril_class = HTCQualcommRIL
-ro.telephony.default_network = 8
+ro.telephony.default_network = 0
 telephony.lteOnCdmaDevice = 1
 
 # RIL properties
@@ -89,7 +89,7 @@ ro.cdma.home.operator.numeric = 310012
 ro.cdma.subscribe_on_ruim_ready = true
 
 # For Verizon data retry configuration
-ro.cdma.data_retry_config = max_retries=infinite,0,0,60000,120000,480000,900000
+ro.cdma.data_retry_config = max_retries=infinite
 
 # Modify MMS APN retry timer from 5s to 2s.
 ro.gsm.2nd_data_retry_config = max_retries=3, 2000, 2000, 2000
@@ -98,14 +98,14 @@ ro.gsm.2nd_data_retry_config = max_retries=3, 2000, 2000, 2000
 ro.ril.set.mtusize = 1428
 
 # RF team request
-ro.ril.enable.dtm = 0
+ro.ril.enable.dtm = 1
 ro.ril.gprsclass = 12
 ro.ril.hsdpa.category = 10
 ro.ril.hsupa.category = 6
 ro.ril.hsxpa = 3
  
 # For HSDPA low throughput
-ro.ril.disable.power.collapse = 1
+ro.ril.disable.power.collapse = 0
  
 #system props for time-services
 persist.timed.enable = true
@@ -131,8 +131,8 @@ ro.ril.enable.prl.recognition = 1
 
 #SIM
 ro.htc.device.slot1 = RUIM
-persist.radio.no_wait_for_card = 1
-persist.radio.apm_sim_not_pwdn = 1
+persist.radio.no_wait_for_card = 0
+persist.radio.apm_sim_not_pwdn = 0
 
 # System prop for switching gps driver to qmi
 persist.gps.qmienabled = true
@@ -148,7 +148,7 @@ persist.thermal.monitor = true
 
 # Set this value to force load 8k modem in release key
 # vigor must enable this value to enable 9kramdump
-ro.modem.load.release_key = true
+ro.modem.load.release_key = false
 
 # UMS
 persist.sys.usb.config = mass_storage,adb
